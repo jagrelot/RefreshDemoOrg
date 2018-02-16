@@ -1,3 +1,3 @@
 #!/bin/bash
 ant retrieve
-echo "Hello Jose"
+rm -rf documents cleanDataServices profiles/Chatter\ Only\ User.profile
