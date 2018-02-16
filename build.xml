@@ -1,0 +1,21 @@
+<project name="JAAOrgDemo" default="retrieve" basedir="." xmlns:sf="antlib:com.salesforce">
+<taskdef resource="com/salesforce/antlib.xml" classPath="${ant.library.dir}/ant-salesforce.jar" uri="antlib:com.salesforce"/>
+
+  <property name="build.properties" value="build.properties" />
+  <property file="${build.properties}" />
+  <property environment="env" />
+
+  <target name="reset">
+  	<delete file="src.zip"/>
+  	<delete dir="src"/>
+  	<mkdir  dir="src"/>
+  </target>
+
+  <target name="retrieve" depends="reset">
+    <sf:retrieve username="${sf.username}" 
+		 password="${sf.password}" 
+		 serverurl="${sf.serverUrl}" 
+		 unpackaged="retrieve/package.xml" 
+		 retrieveTarget="src" />
+  </target>
+</project>
