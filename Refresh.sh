@@ -1,4 +1,12 @@
 #!/bin/bash
 ant retrieve
 pwd
-sudo cp src ../../../../../OrgDemoReop/RespositoryOne-Git/src
+# Move current dirctory(Jenkins Workspace) to org repository
+mv ./src!(package.xml)  ~/OrgDemoReop/RepositoryOne-Git/src
+
+
+
+
+
+
+
